@@ -53,11 +53,11 @@ const startServer = async () => {
       serveStatic(app);
     }
 
-    const port = 3030;
+    const port = process.env.PORT || 3030;
     server.listen(
       {
         port,
-        host: "localhost", // Changed from "0.0.0.0" to "localhost"
+        host: "0.0.0.0",
       },
       () => {
         log(`Serving on port ${port}`);
